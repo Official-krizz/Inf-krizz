@@ -1,0 +1,177 @@
+local player = game.Players.LocalPlayer
+
+-- Create GUI
+local screenGui = Instance.new("ScreenGui", player.PlayerGui)
+local mainFrame = Instance.new("Frame", screenGui)
+mainFrame.Size = UDim2.new(0, 300, 0, 500)
+mainFrame.Position = UDim2.new(0.5, -150, 0.5, -250)
+mainFrame.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
+
+local optionsButton = Instance.new("TextButton", mainFrame)
+optionsButton.Size = UDim2.new(0, 280, 0, 50)
+optionsButton.Position = UDim2.new(0, 10, 0, 10)
+optionsButton.Text = "All Options"
+optionsButton.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+
+local fpsLabel = Instance.new("TextLabel", mainFrame)
+fpsLabel.Size = UDim2.new(0, 280, 0, 50)
+fpsLabel.Position = UDim2.new(0, 10, 0, 70)
+fpsLabel.Text = "FPS: "
+fpsLabel.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+
+-- Auto Farm Button
+local autoFarmButton = Instance.new("TextButton", mainFrame)
+autoFarmButton.Size = UDim2.new(0, 280, 0, 50)
+autoFarmButton.Position = UDim2.new(0, 10, 0, 130)
+autoFarmButton.Text = "Auto Farm"
+autoFarmButton.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+
+-- Auto Kaitun Button
+local autoKaitunButton = Instance.new("TextButton", mainFrame)
+autoKaitunButton.Size = UDim2.new(0, 280, 0, 50)
+autoKaitunButton.Position = UDim2.new(0, 10, 0, 190)
+autoKaitunButton.Text = "Auto Kaitun"
+autoKaitunButton.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+
+-- Auto Sea Button
+local autoSeaButton = Instance.new("TextButton", mainFrame)
+autoSeaButton.Size = UDim2.new(0, 280, 0, 50)
+autoSeaButton.Position = UDim2.new(0, 10, 0, 250)
+autoSeaButton.Text = "Auto Sea"
+autoSeaButton.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+
+-- Player Quest Button
+local playerQuestButton = Instance.new("TextButton", mainFrame)
+playerQuestButton.Size = UDim2.new(0, 280, 0, 50)
+playerQuestButton.Position = UDim2.new(0, 10, 0, 310)
+playerQuestButton.Text = "Player Quest"
+playerQuestButton.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+
+-- Raid Fruit Button
+local raidFruitButton = Instance.new("TextButton", mainFrame)
+raidFruitButton.Size = UDim2.new(0, 280, 0, 50)
+raidFruitButton.Position = UDim2.new(0, 10, 0, 370)
+raidFruitButton.Text = "Raid Fruit"
+raidFruitButton.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+
+-- Race Buttons
+local raceV2Button = Instance.new("TextButton", mainFrame)
+raceV2Button.Size = UDim2.new(0, 280, 0, 50)
+raceV2Button.Position = UDim2.new(0, 10, 0, 430)
+raceV2Button.Text = "Race V2"
+raceV2Button.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+
+local raceV3Button = Instance.new("TextButton", mainFrame)
+raceV3Button.Size = UDim2.new(0, 280, 0, 50)
+raceV3Button.Position = UDim2.new(0, 10, 0, 490)
+raceV3Button.Text = "Race V3"
+raceV3Button.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+
+local raceV4Button = Instance.new("TextButton", mainFrame)
+raceV4Button.Size = UDim2.new(0, 280, 0, 50)
+raceV4Button.Position = UDim2.new(0, 10, 0, 550)
+raceV4Button.Text = "Race V4"
+raceV4Button.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+
+local cyborgRaceButton = Instance.new("TextButton", mainFrame)
+cyborgRaceButton.Size = UDim2.new(0, 280, 0, 50)
+cyborgRaceButton.Position = UDim2.new(0, 10, 0, 610)
+cyborgRaceButton.Text = "Cyborg Race"
+cyborgRaceButton.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+
+-- Function to Calculate FPS
+local function calculateFPS()
+    local frameCount = 0
+    local startTime = tick()
+
+    while true do
+        frameCount = frameCount + 1
+        wait(1)
+        local elapsed = tick() - startTime
+        local fps = frameCount / elapsed
+        fpsLabel.Text = "FPS: " .. math.floor(fps)
+    end
+end
+
+-- Function to Reduce Lag
+local function reduceLag()
+    for _, object in pairs(workspace:GetChildren()) do
+        if object:IsA("Part") and object.Name ~= "Baseplate" then
+            object.Material = Enum.Material.SmoothPlastic
+            object.CanCollide = false
+        end
+    end
+end
+
+-- Auto Farm Function
+local function autoFarm()
+    while true do
+        wait(1)
+        -- Your auto farm logic here
+    end
+end
+
+-- Auto Kaitun Function
+local function autoKaitun()
+    while true do
+        wait(1)
+        -- Your auto kaitun logic here
+    end
+end
+
+-- Auto Sea Function
+local function autoSea()
+    while true do
+        wait(1)
+        -- Your auto sea logic here
+    end
+end
+
+-- Player Quest Function
+local function playerQuest()
+    if player.PlayerGui:FindFirstChild("PVP") and player.PlayerGui.PVP.Enabled then
+        player.leaderstats.Money.Value = player.leaderstats.Money.Value + 50000
+        player.leaderstats.Exp.Value = player.leaderstats.Exp.Value + 20000000000
+    end
+end
+
+-- Raid Fruit Function
+local function raidFruit()
+    -- Your logic to raid fruit
+end
+
+-- Race Functions
+local function raceV2()
+    -- Your logic for Race V2
+end
+
+local function raceV3()
+    -- Your logic for Race V3
+end
+
+local function raceV4()
+    -- Your logic for Race V4
+end
+
+local function cyborgRace()
+    -- Your logic for Cyborg Race
+end
+
+-- Button Click Events
+optionsButton.MouseButton1Click:Connect(function()
+    calculateFPS()
+    reduceLag()
+end)
+
+autoFarmButton.MouseButton1Click:Connect(autoFarm)
+autoKaitunButton.MouseButton1Click:Connect(autoKaitun)
+autoSeaButton.MouseButton1Click:Connect(autoSea)
+playerQuestButton.MouseButton1Click:Connect(playerQuest)
+raidFruitButton.MouseButton1Click:Connect(raidFruit)
+raceV2Button.MouseButton1Click:Connect(raceV2)
+raceV3Button.MouseButton1Click:Connect(raceV3)
+raceV4Button.MouseButton1Click:Connect(raceV4)
+cyborgRaceButton.MouseButton1Click:Connect(cyborgRace)
+```
+
+.
